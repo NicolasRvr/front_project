@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+$main-color: #FFFFFF;
+$second-color: #B8DBFF;
+$button-color: #1D354F;
+$text-color: #7D8994;
+$title-color: #1D354F;
+$white-texte: #F1F1F1;
+
+*, ::after, ::before {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ::-webkit-scrollbar {
+      display: none;
+  }
+  
+  body {
+    position: relative;
+    display:block;
+    height: 100vh;
+    width: 100%;
+    font-family: Raleway;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background-color: $second-color;
+    
+  }
+  
+  .navbar {
+    position:fixed;
+    height: 10%;
+    width: 100%;
+    background: $main-color;
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: lighter;
+    color: $text-color;
+    z-index: 2;
+    opacity: 0.9;
+    
+    &__left {
+      display:flex;
+      &__logo {
+        border-right: 0.15em solid $text-color;
+        font-weight : bold;
+        letter-spacing: 3px;
+        color: $title-color;
+        font-size: 1.1em;
+        cursor: pointer;
+        padding: 5px 10% 5px 10%;
+        // border: 1px solid black;
+        margin-right: 10%;
+      }
+      &__toggle {
+        display: flex;
+        // display: none;
+        &__item {
+        position:relative;
+        display: flex;
+        align-item: center;  
+        justify-content: center;
+        margin-right: 10%;
+        cursor: pointer;
+        padding: 5px 0 5px 0;
+        transition: all 1s ease-in-out;
+        }
+      }
+    }
+    
+    &__right{
+      position: absolute;
+      right:5%;
+    }
+  }
+  
+  section {
+    position:relative;
+    height: 100%;
+    width: 100%;
+    background-color: $second-color;
+    // border: 1px solid black;
+    padding-top:15%;
+  }
+  
+  .main__content {
+      padding-top: 5%;
+      text-align: center;
+      width: 75%;
+      margin: auto;
+  
+    &__title {
+      font-size: 3em;
+      letter-spacing: 5px;
+      font-family: 'Roboto Slab';
+      color: $title-color;
+    }
+    
+    &__text {
+      padding : 5% 0 5% 0;
+      color: $title-color;
+    }
+    
+    &__but {
+      margin: auto;
+    }
+  }
+  
+  .avis__content {
+    width: 90%;
+    margin: auto;
+    
+    &__title{
+      text-align:center;
+      color: $title-color;
+    }
+    
+    &__gallery {
+      display: grid;
+      grid-template-columns: 
+        repeat(auto-fit, 300px);
+      grid-gap: 30px;
+      justify-content:center;
+      align-items: center;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      
+      .card {
+        position:relative;
+        height:250px;
+        background:  $main-color;
+        padding: 20px;
+        border-radius: 10px;
+        transform: scale(1);
+        transition: transform 1s ease-in-out;
+        cursor: pointer;
+        
+        &:hover {
+        transform: scale(1.1);
+        transition: transform 1s ease-in-out;
+        }
+        
+        &__text {
+          padding-right: 20px;
+          text-align: justify;
+          position: absolute;
+          font-size: 0.8em;
+          font-weight:bolder;
+        }
+        
+        &__auhor {
+          position:absolute;
+          bottom: 10%;
+          font-size: 0.9em;
+        }
+      }
+    }
+    &__but {
+      // max-width: 300px;
+      margin:auto;
+      text-align:center;
+    }
+  }
+  
+  .footer {
+    border: 1px solid black;
+  }
+  
+  
+  
+  
+  
+  .button {
+      max-width: 300px;
+      padding: 15px;
+      border-radius: 10px;
+      background: $button-color;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 5px black;
+      transform: scale(1);
+      transition: all 1s ease-in-out;
+    
+      &:hover {
+        transform: scale(1.1);
+        transition: all 1s ease-in-out;
+          }
+  }
+  
+  .active {
+    font-weight: 1000;
+    &:after {
+      position:absolute;
+      display: inline-block;
+      content:"";
+      bottom: 1px;
+      width: 100%;
+      height: 2px;
+      background : $text-color; 
+      &:hover {
+      transform: scaleX(1);
+      opacity: 1;
+      transition: all 1s ease-in-out;
+      }
+    }
+  }
+  
+  // <span class="arrow"></span> ajouter dans les items de la nav
+  .arrow {
+    position: relative;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    height: 11px;
+    width: 2px;
+    background-color: transparent;
+    
+    &:after {
+      position:absolute;
+      display: inline-block;
+      content:"";
+      height:100%;
+      width:100%;
+      transform: translateX(-3px) rotate(-45deg);
+      background: $text-color;
+    }
+      &:before {
+      position:absolute;
+      display: inline-block;
+      content:"";
+      height:100%;
+      width:100%;
+      transform: translateX(3px) rotate(45deg);
+      background: $text-color;
+    }
+  }
+  
+  .menu_toggle {
+    position:relative;
+    .btn_toggle {
+      display:none;
+      // display: block;
+      position: absolute;
+      top: 50%;
+      left: 130%;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%,-50%);
+      background: $button-color;
+      border-radius: 10px;
+      box-shadow: 0 0 5px black;
+      &:after, &:before {
+        position: absolute;
+        content: "";
+        top:50%;
+        left: 50%;
+        width: 25px;
+        height: 2px;
+        background:$white-texte;
+        transition: all 0.5s ease-in-out;
+      }
+      &:after{
+        transform: translate(-50%,-50%) translateY(-5px);
+      }
+      &:before{
+        transform: translate(-50%,-50%) translateY(5px);
+      }
+      &:hover {
+        &:after {
+          transform: translate(-50%,-50%) rotate(45deg);
+        }
+        &:before {
+          transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        &:after, &:before {
+          transition: all 0.5s ease-in-out;
+        } 
+      }
+    } 
+  }
